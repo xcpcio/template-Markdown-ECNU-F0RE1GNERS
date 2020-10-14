@@ -16,7 +16,7 @@ jobs:
       with:
         python-version: '3.x' # Version range or exact version of a Python version to use, using semver version range syntax.
         architecture: 'x64' # (x64 or x86)
-        
+
     - name: Install Pandoc
       run: |
         mkdir -p /tmp/pandoc
@@ -50,6 +50,7 @@ jobs:
         mkdir -p ~/.pandoc/templates
         cp pandoc/algo.latex ~/.pandoc/templates/
         sh pandoc/gen.sh
+        mkdir build
         cp template.pdf build/template.pdf
 
     - name: Release
