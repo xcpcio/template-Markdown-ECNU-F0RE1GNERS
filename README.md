@@ -6,4 +6,4 @@ Build Code Library with Markdown and Pandoc, base on [ECNU F0RE1GNERS template](
 
 [PDF 下载](https://github.com/XCPCIO/template-Markdown-ECNU-F0RE1GNERS/raw/gh-pages/template.pdf)
 
-[使用指北](https://xcpcio.com/code-library/open-source-code-library-list/#%E6%A8%A1%E7%89%88%E6%9E%84%E5%BB%BA-markdown)
+[使用指北](https://xcpcio.com/code-library/code-library-build/#markdown-ecnu-f0re1gners)
