@@ -2,6 +2,7 @@ name: Build
 
 on:
   workflow_dispatch:
+  pull_request:
   push:
     branches:
       - main
@@ -17,7 +18,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ env.python_version }}
 
@@ -27,7 +29,7 @@ jobs:
           cd /tmp/pandoc
           python -m pip --no-cache-dir install setuptools wheel
           python -m pip --no-cache-dir install pandocfilters Pygments
-          sudo apt install -y texlive texlive-xetex latexmk wget
+          sudo apt install -y texlive texlive-xetex texlive-lang-chinese latexmk wget
           wget -q "https://github.com/jgm/pandoc/releases/download/${{ env.pandoc_version }}/pandoc-${{ env.pandoc_version }}-1-amd64.deb"
           sudo dpkg -i pandoc-${{ env.pandoc_version }}-1-amd64.deb
           rm -rf *.deb
@@ -60,7 +62,6 @@ jobs:
       - name: Release
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build
-          CLEAN: false
+          folder: build
+          branch: gh-pages
+          clean: false
