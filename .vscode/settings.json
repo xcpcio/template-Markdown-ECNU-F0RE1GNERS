@@ -6,6 +6,7 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "cSpell.words": [
-        "pandoc"
+        "pandoc",
+        "texlive"
     ]
 }
